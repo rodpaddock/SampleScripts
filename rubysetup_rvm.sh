@@ -1,20 +1,17 @@
 logfile="install.log"
-
-#install some python utils for apt help
-echo "installing python apt utils"
-sudo apt-get -y install python-software-properties >> $logfile
-
-#update all of the package
-echo "updating packages"
-sudo add-apt-repository ppa:pitti/postgresql >> $logfile #postgres package
-sudo apt-get update >> $logfile
-
-echo "upgrading packages"
-sudo apt-get upgrade -y  >> $logfile
+ruby_version="1.9.2"
+ruby_version_string="1.9.2p180"
+ruby_source_url="ftp://ftp.ruby-lang.org//pub/ruby/1.9/ruby-1.9.2-p180.tar.gz"
+ruby_source_tar_name="ruby-1.9.2-p180.tar.gz"
+ruby_source_dir_name="ruby-1.9.2-p180"
 
 #git
 echo "installing git"
 sudo apt-get install git-core -y >> $logfile 
+
+
+echo "installing sqlite 3"
+sudo apt-get install sqlite3 libsqlite3-dev -y >> $logfile
 
 
 #build tools
@@ -62,11 +59,12 @@ source $HOME/.bash_profile
 echo "installing ruby"
 rvm install 1.9.2
 
+
+
 echo "loading bash shell again"
 source $HOME/.rvm/scripts/rvm
 source $HOME/.bashrc
 source $HOME/.bash_profile
-
 
 echo "using ruby 1.9.2"
 rvm  use 1.9.2
@@ -76,3 +74,27 @@ gem install bundler passenger rails --no-ri --no-rdoc >> $logfile
 
 echo "install postgres driver"
 gem install pg --no-ri --no-rdoc >> $logfile
+
+echo "install ruby sqlite 3 driver"
+gem install sqlite3-ruby --no-ri --no-rdoc >> $logfile
+
+echo "install rspec"
+gem install rspec --no-ri --no-rdoc >> $logfile
+
+
+echo "install haml"
+gem install haml --no-ri --no-rdoc >> $logfile
+gem install haml-rails --no-ri --no-rdoc >> $logfile
+
+echo "install jquery for rails"
+gem install jquery-rails --no-ri --no-rdoc >> $logfile
+
+
+
+
+echo "INSTALLATION COMPLETE"
+echo "If you have problems running RVM from the command shell "
+echo "Change your ubuntu terminal settings to create a login shell. "
+echo "to do this: open a terminal. From the menu Edit->Profiles->Default->Edit"
+echo "Select the Run Command As Login Shell"
+echo "Close and repoen your terminal"
