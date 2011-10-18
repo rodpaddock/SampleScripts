@@ -89,10 +89,10 @@ sudo gem install rspec
 
 echo "install haml"
 sudo gem install haml
-sudo gem ‘haml-rails’
+sudo gem install ‘haml-rails’
 
 echo "install jquery for rails"
-sudo gem ‘jquery-rails’
+sudo gem install ‘jquery-rails’
 
 
 
