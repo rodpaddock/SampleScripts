@@ -73,7 +73,9 @@ echo "using ruby 1.9.2"
 #rvm  use 1.9.2
 
 echo "install rails"
-sudo gem install bundler passenger rails --no-ri --no-rdoc >> $logfile 
+sudo gem install rails --version 3.0.10 --no-ri --no-rdoc >> $logfile
+sudo gem install bundler passenger  --no-ri --no-rdoc >> $logfile 
+
 
 echo "install postgres driver"
 sudo gem install pg --no-ri --no-rdoc >> $logfile
