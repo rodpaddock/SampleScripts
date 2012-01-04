@@ -58,7 +58,10 @@ sudo gem install ‘haml-rails’ >> $logfile
 echo "install jquery for rails"
 sudo gem install ‘jquery-rails’
 
-
+echo "installing odbc"
+sudo apt-get install unixodbc -y >> $logfile
+sudo apt-get install unixodbc-dev -y >> $logfile
+sudo apt-get install freetds-dev freetds-bin tdsodbc -y >> $logfile
 
 
 echo "INSTALLATION COMPLETE"
