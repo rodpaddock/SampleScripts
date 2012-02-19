@@ -1,4 +1,6 @@
 
+sudo apt-get update 
+
 #install some python utils for apt help
 echo "installing python apt utils"
 sudo apt-get -y install python-software-properties 
