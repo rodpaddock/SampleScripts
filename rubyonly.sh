@@ -41,7 +41,7 @@ echo "using ruby 1.9.2"
 #rvm  use 1.9.2
 
 echo "install rails"
-sudo gem install rails --version 3.0.10 --no-ri --no-rdoc >> $logfile
+sudo gem install rails --no-ri --no-rdoc >> $logfile
 sudo gem install bundler passenger  --no-ri --no-rdoc >> $logfile 
 
 echo "install ruby sqlite 3 driver"
@@ -52,11 +52,11 @@ sudo gem install rspec >> $logfile
 
 
 echo "install haml"
-sudo gem install haml >> $logfile
-sudo gem install ‘haml-rails’ >> $logfile
+sudo gem install "haml" >> $logfile
+sudo gem install "haml-rails" >> $logfile
 
 echo "install jquery for rails"
-sudo gem install ‘jquery-rails’
+sudo gem install "jquery-rails"
 
 echo "installing odbc"
 sudo apt-get install unixodbc -y >> $logfile
