@@ -1,0 +1,9 @@
+<VirtualHost *:80>
+  ServerName autodraft.dashpointlabs.net
+  DocumentRoot /projects/autodraft/public
+  RailsEnv hackme
+  <Directory /projects/autodraft/public>
+    Allow from all
+    Options -Multiviews
+  </Directory>
+</VirtualHost>

@@ -1,0 +1,7 @@
+  sudo a2dissite default
+apachectl -t -D DUMP_VHOSTS
+ sudo /etc/init.d/apache2 restart
+ apachectl -t -D DUMP_MODULES
+ sudo a2ensite default
+ sudo a2ensite autodraft.dashpointlabs.net
+sudo a2enmod passenger
